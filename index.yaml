@@ -1,3 +1,14 @@
 apiVersion: v1
-entries: {}
-generated: "2023-11-01T11:15:16.4634157-03:00"
+entries:
+  mychart:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2023-11-01T11:18:35.7201727-03:00"
+    description: A Helm chart for Kubernetes
+    digest: 171a47655173f25d9b7f5a0b42a0a4f68b8904e50949bd52b97e76cf9487d616
+    name: mychart
+    type: application
+    urls:
+    - https://matix10.github.io/Clase43-Desafio9/mychart-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-11-01T11:18:35.7100067-03:00"
