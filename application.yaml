@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    chart: nodejs-example-chart
+    chart: 
     repoURL:  https://matix10.github.io/Clase43-Desafio9/
     targetRevision: 0.1.5
     helm:
