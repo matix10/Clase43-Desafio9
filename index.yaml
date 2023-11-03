@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  py-app:
+  - apiVersion: v2
+    appVersion: 0.1.10
+    created: "2023-11-03T12:14:35.973463475Z"
+    description: A Helm chart for Kubernetes
+    digest: 018c321942737d573fbeebfe35e2f443a25116f504b2f0fcba5deb9de95d348e
+    name: py-app
+    type: application
+    urls:
+    - https://github.com/matix10/Clase43-Desafio9/releases/download/py-app-0.1.10/py-app-0.1.10.tgz
+    version: 0.1.10
+generated: "2023-11-03T12:14:35.973469577Z"
