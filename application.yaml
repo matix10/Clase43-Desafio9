@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     chart: Clase43-Desafio9
-    repoURL:  https://matix10.github.io/Clase43-Desafio9/
+    repoURL:  'https://matix10.github.io/Clase43-Desafio9'
     targetRevision: 0.1.5
     helm:
       releaseName: py-app
