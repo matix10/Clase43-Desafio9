@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd-example-app
+  name: py-app
   namespace: argo-cd
 spec:
   project: default
   source:
-    chart: nodejs-example-chart
-    repoURL:  https://matix10.github.io/nodejs-example-chart/
+    chart: Clase43-Desafio9
+    repoURL:  'https://matix10.github.io/Clase43-Desafio9'
     targetRevision: 0.1.5
     helm:
-      releaseName: nodejs-app
+      releaseName: py-app
   ## testear con el deploy de EKS
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: app-educacionit
+    namespace: argo-cd
   syncPolicy:
     syncOptions:
     - CreateNamespace=true # permite forzar la creacion de NS.
