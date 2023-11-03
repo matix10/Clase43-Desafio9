@@ -1,6 +1,5 @@
 name: Package and Publish Helm Chart
 
-
 on:
   push:
     branches:
