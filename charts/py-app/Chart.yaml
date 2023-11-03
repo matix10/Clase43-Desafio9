@@ -23,8 +23,4 @@ version: 0.1.10
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-<<<<<<< HEAD:charts/py-app/Chart.yaml
-=======
-
->>>>>>> a418326d6c94eb17917ed07f94eaa0f639ec5fd6:charts/Chart.yaml
 appVersion: "0.1.10"
