@@ -1,0 +1,71 @@
+pipeline {
+    agent {
+    kubernetes {
+            // Rather than inline YAML, in a multibranch Pipeline you could use: yamlFile 'jenkins-pod.yaml'
+            // Or, to avoid YAML:
+            // containerTemplate {
+            //     name 'shell'
+            //     image 'ubuntu'
+            //     command 'sleep'
+            //     args 'infinity'
+            // }
+            yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: argocd-container
+    image: edgaregonzalez/argocd:v0.0.1
+    command:
+    - sleep
+    args:
+    - infinity
+'''
+            // Can also wrap individual steps:
+            // container('shell') {
+            //     sh 'hostname'
+            // }
+            defaultContainer 'argocd-container'
+        }
+    }
+    
+    stages{
+        stage('Checkout'){
+            steps{
+            checkout scm
+
+        }
+        }
+        stage('deploy to argocd'){
+            steps{
+                withCredentials([string(credentialsId: 'argocd-credential-password', variable: 'TOKEN')]) {
+                    sh """
+                        argocd login argocd-server.argo-cd:443 --insecure --username admin --password $TOKEN && \
+                        argocd app set argocd-example-app \
+                        --helm-chart py-app \
+                        --project default \
+                        --repo  https://matix10.github.io/Clase43-Desafio9/\
+                        --release-name py-app \
+                        --helm-version 0.1.5 \
+                        --dest-namespace educacionit \
+                        --dest-server https://kubernetes.default.svc \
+                        --sync-option Prune=true \
+                        --self-heal \
+                        --sync-policy automated
+                    """
+                }
+            }
+
+
+
+        }
+
+    }
+
+
+
+    }
+
+
+
+

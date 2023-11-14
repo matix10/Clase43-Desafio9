@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: argocd-pipe
+  namespace: argo-cd
+secrets:
+- name: argocd-pipe

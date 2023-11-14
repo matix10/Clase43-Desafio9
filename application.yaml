@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    chart: Clase43-Desafio9
+    chart: py-app
     repoURL:  'https://matix10.github.io/Clase43-Desafio9'
-    targetRevision: 0.1.5
+    targetRevision: 0.1.10
     helm:
       releaseName: py-app
   ## testear con el deploy de EKS
